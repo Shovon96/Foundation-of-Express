@@ -1,6 +1,5 @@
 const express = require('express')
 import { Request, Response } from "express"
-import fs from 'fs'
 import path from "path"
 import { client } from "../server";
 import { ObjectId } from "mongodb";

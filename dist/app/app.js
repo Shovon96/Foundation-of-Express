@@ -11,4 +11,14 @@ app.use('/users', todos_router_1.usersRouter);
 app.get('/', (req, res) => {
     res.send('Learnig Express Js');
 });
+// Global Error Handeling
+app.use((req, res, next) => {
+    res.status(404).json({ message: '404: Router Not Found' });
+});
+app.use((error, req, res, next) => {
+    if (error) {
+        console.log("Error", error);
+        res.status(400).json({ message: "Something went wrong from global error." });
+    }
+});
 exports.default = app;
